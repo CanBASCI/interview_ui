@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package todoPackage;
+
+service Todo {
+  rpc createTodo (TodoItem) returns (TodoItem);
+  rpc readTodos() returns(TodoItems);
+}
+
+message void{}
+
+message TodoItem {
+  string name = 2;
+  int32 id = 1;
+}
+
+message TodoItems {
+  repeated TodoItem item = 1;
+}
